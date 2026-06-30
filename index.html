@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CYBORG — Techfest 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 3D CANVAS (fixed background) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="logo">
+      <span class="logo-bracket">[</span>CYBORG<span class="logo-bracket">]</span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#stats">Stats</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Initialize
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-tag">TECHFEST 2026 — BUILD IN 3D</div>
+      <h1 class="hero-title">
+        <span class="line1">FUTURE</span>
+        <span class="line2">CYBORG</span>
+        <span class="line3">WORLD</span>
+      </h1>
+      <p class="hero-sub">AI + Human Technology Revolution<br>Experience the next frontier of intelligence.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+          Explore Now ↓
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+          Learn More
+        </button>
+      </div>
+    </div>
+    <div class="hero-3d-hint">
+      <span>Scroll to interact</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="section-label">// CORE SYSTEMS</div>
+    <h2 class="section-title">Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="card-icon">🤖</div>
+        <h3>AI Integration</h3>
+        <p>Neural networks merged with human cognition. Real-time learning, adaptive intelligence.</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="feature-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="card-icon">🔒</div>
+        <h3>Cyber Security</h3>
+        <p>Quantum-encrypted data streams. Zero-trust architecture protecting every node.</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="feature-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="card-icon">🧠</div>
+        <h3>Neural Network</h3>
+        <p>Biological-silicon hybrid processing. 10× faster than conventional computation.</p>
+        <div class="card-line"></div>
+      </div>
+      <div class="feature-card" data-tilt>
+        <div class="card-glow"></div>
+        <div class="card-icon">⚡</div>
+        <h3>Edge Computing</h3>
+        <p>Distributed processing at the boundary. Latency under 1ms, uptime 99.99%.</p>
+        <div class="card-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="hex-ring">
+          <div class="hex-inner">
+            <span class="hex-icon">⬡</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">// ABOUT</div>
+        <h2 class="section-title">Cyborg Technology</h2>
+        <p>
+          Cyborg technology fuses human intelligence with artificial intelligence,
+          bridging the biological and the digital. We stand at the threshold of the
+          greatest transformation in human history — where consciousness meets code,
+          and thought drives machines.
+        </p>
+        <p>
+          This is not science fiction. This is Techfest 2026.
+        </p>
+        <div class="about-tags">
+          <span>#Neural</span>
+          <span>#Hybrid</span>
+          <span>#Future</span>
+          <span>#AI</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="section-label">// METRICS</div>
+    <h2 class="section-title">By the Numbers</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num" data-target="10">0</span><span class="stat-unit">×</span>
+        <p>Faster Processing</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="99">0</span><span class="stat-unit">%</span>
+        <p>Neural Accuracy</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="500">0</span><span class="stat-unit">+</span>
+        <p>Active Nodes</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="1">0</span><span class="stat-unit">ms</span>
+        <p>Response Latency</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-label">// CONNECT</div>
+    <h2 class="section-title">Initialize Contact</h2>
+    <div class="contact-form">
+      <div class="input-group">
+        <label>IDENTIFIER</label>
+        <input type="text" placeholder="Your Name" />
+      </div>
+      <div class="input-group">
+        <label>NODE ADDRESS</label>
+        <input type="email" placeholder="your@email.com" />
+      </div>
+      <div class="input-group">
+        <label>DATA PACKET</label>
+        <textarea placeholder="Your Message"></textarea>
+      </div>
+      <button class="btn-primary full" onclick="handleSubmit()">Transmit Message</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="logo">[CYBORG]</span>
+      <p>&copy; 2026 Cyborg · Techfest 3D · All systems operational.</p>
+      <span class="footer-status">● ONLINE</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
